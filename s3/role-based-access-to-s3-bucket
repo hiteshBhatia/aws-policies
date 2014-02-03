@@ -1,0 +1,14 @@
+"Version": "2008-10-17",
+"Id": "Policy1388257451238",
+"Statement": [ 
+      { "Sid": "1232343455",
+        "Effect": "Allow",
+        "Principal": { "AWS": "arn:aws:iam::accountid:role/worker" },    //arn:aws:iam::accountnumber:role/rolename
+        "Action": "s3:GetObject",      // actions allowed, only allowed to fetch object.
+        "Resource": "arn:aws:s3:::bucketname/file", 
+        "Condition": {
+               "IpAddress": {"aws:SourceIp": "IpAddress"}     // Ip address to allow access to
+                     } 
+               } 
+         ] 
+}
