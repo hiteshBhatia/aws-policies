@@ -1,0 +1,26 @@
+{
+   "Version":"2008-10-17",
+   "Id":"Policy1391686183873",
+   "Statement":[
+       {
+           "Sid":"Stmt1391686181884",
+           "Effect":"Allow",
+           "Principal":{
+              "AWS":"*"
+
+           },
+           "Action":"s3:GetObject", // actions allowed, only allowed to fetch object.
+           "Resource":"arn:aws:s3:::<BucketName>/*"  //Change bucket name with your bucket
+    },
+      {
+         "Sid":"Stmt1391686181885",
+         "Effect":"Allow",
+         "Principal":{
+              "AWS":"arn:aws:iam::221312312:user/<UserName>" //arn:aws:iam::accountnumber:role/rolename
+         },
+
+         "Action":"s3:PutObject", &nbsp;&nbsp;// actions allowed, only allowed to create object.
+         "Resource":"arn:aws:s3:::<BucketName>/*" //Change bucket name with yourbucket
+      }
+   ]
+}
